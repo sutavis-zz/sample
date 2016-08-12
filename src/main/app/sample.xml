@@ -10,7 +10,7 @@ http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mu
     <http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8082" doc:name="HTTP Listener Configuration"/>
     <flow name="sampleFlow"> 
         <http:listener config-ref="HTTP_Listener_Configuration" path="/demo" doc:name="HTTP" allowedMethods="POST"/>
-        <logger message="In Flow...." level="INFO" doc:name="Logger"/>
+        <logger message="In Flow....modified" level="INFO" doc:name="Logger"/>
         <validation:is-null value="#[payload]" doc:name="Validation"/>
         <exception-strategy ref="sampleChoice_Exception_Strategy" doc:name="Reference Exception Strategy"/>
     </flow>
